@@ -1,0 +1,56 @@
+body {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 25vh 75vh repeat(4, 100vh);
+
+    column-gap: 1em;
+    row-gap: 1em;
+
+    background-color: black;
+    color: white;
+
+    margin: 0;
+}
+
+.navBar {
+    grid-column: 3 / span 5;
+}
+
+.vFlex {
+    flex-direction: column;
+}
+
+.centerStage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navList {
+    list-style-type: none;
+    padding: 0%;
+    margin: 0%;
+}
+
+.navItem {
+    display: inline-flex;
+}
+
+.navLink {
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0em;
+    color: white;
+    background-color: rgb(25, 25, 25);
+    transition: all 0.25s;
+}
+
+.navLink:hover {
+    background-color: white;
+    color: black;
+}
+
+#copyright {
+    padding: 1em;
+}
