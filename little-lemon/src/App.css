@@ -1,38 +1,254 @@
-.App {
-  text-align: center;
-}
+@keyframes blurOut {
+  0% {
+      opacity: 0;
+      filter: blur(13em);
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  100% {
+      opacity: 1;
+      filter: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(4em);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0em);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+  color: white;
+
+  margin: 0;
+  padding: 0;
+
+  animation-name: blurOut;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.hFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+.vFlex {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.centerStage {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.navBar {
+  gap: 2em;
+}
+
+.navList {
+  list-style-type: none;
+  padding: 0%;
+  margin: 0%;
+}
+
+.navItem {
+  display: inline-flex;
+}
+
+.navLink, .uiButton {
+  text-decoration: none;
+  padding: 1em 1.5em;
+  margin: 0em;
+  color: white;
+  background-color: rgb(25, 25, 25);
+  transition: all 0.25s;
+  font-size: medium;
+  display: inline-block;
+  border: 0.1em solid transparent;
+}
+
+.navLink:hover, .uiButton:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.uiTitle {
+  font-size: 400%;
+  margin: 0;
+}
+
+.uiSubtitle {
+  font-size: 200%;
+  margin: 0;
+}
+
+.uiPara {
+  font-size: medium;
+  line-height: 1.5em;
+}
+
+.hEnds {
+  display: flex;
+  justify-content: space-between;
+}
+
+.uiArticle {
+  max-width: 90vw;  
+  gap: 4em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 2em;
+  align-items: center;
+
+  border: 0.2em solid rgb(25, 25, 25);
+  transform: translateY(0em);
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.uiArticleText {
+  align-items: flex-start;
+  width: 40vw;
+}
+
+.uiArticleImg {
+  max-height: 80vh;
+  max-width: 44vw;
+}
+
+#specialsHeader {
+  width: 100%;
+}
+
+#specialsHeader .uiButton {
+  align-self: center;
+  justify-self: center;
+}
+
+.uiCard {
+  border: 0.1em solid rgb(25, 25, 25);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.uiCardHeader, 
+.uiCardPara {
+  padding: 4%;
+  margin-top: 0;
+}
+
+.uiCardTitle,
+.uiCardPrice {
+  margin: 0;
+  font-size: large;
+}
+
+.uiCardPrice {
+  color: greenyellow;
+}
+
+.uiCardLink {
+  align-self: flex-start;
+}
+
+.uiCardImg {
+  height: 15em;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.uiGrid-3 {
+  display: grid;
+  gap: 2em;
+  row-gap: 4em;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.uiForm {
+  padding: 1em;
+  justify-content: space-between;
+}
+
+.uiFormImg {
+  max-width: 50%;
+  max-height: 70vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.uiFormTitle {
+  margin: 0.5em;
+}
+
+.uiFormSubmit {
+  margin: 1em;
+}
+
+.uiLabel, .uiInput {
+  padding: 1em;
+  font-size: medium;
+  outline: none;
+
+  border: 0.1em solid rgb(25, 25, 25);
+
+  transition: all 0.25s;
+}
+
+.uiInput {
+  background-color: rgb(25, 25, 25);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.uiInput:hover, .uiInput:focus {
+  color: black;
+  background-color: white;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.uiInput:focus {
+  cursor: text;
+}
+
+.uiLabel {
+  width: 20%;
+}
+
+.uiInput {
+  width: 80%;
+}
+
+.uiFormElement {
+  margin: 0.5em 0em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uiSecondary {
+  color: gray;
+}
+
+#copyright {
+  padding: 1em;
 }
